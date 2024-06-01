@@ -1,0 +1,27 @@
+    Source Code :-
+
+                  
+
+                  pip install Whisper  (#to install Multilingual model from Open AI into Python IDE)
+
+
+                  
+                  import whisper
+
+                  model = whisper.load_model("base")
+                  model.device 
+                  
+                  from IPython.display import Audio
+                  Audio("/content/sample audio.mp3")
+
+                  audio = whisper.load_audio("/content/sample audio.mp3")
+                  audio = whisper.pad_or_trim(audio)                              (#load audio and pad/trim it to fit 30 seconds)
+                  
+                  options = whisper.DecodingOptions()
+                  result = whisper.decode(model, mel, options)
+                  
+                  print(result.text)
+
+
+                  Ouput :- “Now, our operation is small, but there's a lot of potential for aggressive expansion. So which of you fine gentlemen would like to join our team?
+                            Oh, there's only one spot open right now, so we're gonna have tryouts.”
